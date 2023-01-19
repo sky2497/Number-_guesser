@@ -16,6 +16,35 @@ else:
 
        
 
-random_number = random.randrange(-5 , 11)
+random_number = random.randrange(0 , 5)
+guesses = 0
 
-print(random_number)
+
+
+while True:
+    guesses += 1
+    user_guess = input("Make a guess: ")
+
+    if user_guess.isdigit():
+       user_guess = int(user_guess)
+    else:
+        print("Please type a number next time.")
+        continue
+
+
+    if user_guess == random_number:
+        print("You got it!")
+        break
+    else:
+        if user_guess > random_number:
+            print(" you were above the number!")
+
+        else:
+            print("you were below the number!")
+             
+
+
+print("you got it in", guesses, "guesses")
+
+
+
